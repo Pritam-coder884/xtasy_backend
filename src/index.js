@@ -12,7 +12,7 @@ mongoose.connect(config.mongoose.url).then(() => {
 	});
 });
 
-mongoose.set('strictQuery', false);
+mongoose.set('strictQuery', true);
 
 const exitHandler = () => {
 	if (server) {
