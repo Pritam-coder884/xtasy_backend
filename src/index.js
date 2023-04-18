@@ -5,6 +5,7 @@ const logger = require("./config/logger");
 
 let server;
 
+mongoose.set('strictQuery', true);
 mongoose.connect(config.mongoose.url).then(() => {
 	logger.info("Connected to Mongodb");
 	server = app.listen(config.port, () => {
@@ -12,7 +13,6 @@ mongoose.connect(config.mongoose.url).then(() => {
 	});
 });
 
-mongoose.set('strictQuery', true);
 
 const exitHandler = () => {
 	if (server) {
