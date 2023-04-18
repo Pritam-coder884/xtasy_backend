@@ -12,6 +12,8 @@ mongoose.connect(config.mongoose.url).then(() => {
 	});
 });
 
+mongoose.set('strictQuery', false);
+
 const exitHandler = () => {
 	if (server) {
 		server.close(() => {
